@@ -1,43 +1,20 @@
 # Small Images
 
-The demo uses a deliberately small, reproducible image set so the audience can
-follow every layer. Two families are seeded:
+MetaHub works with a deliberately small image set so every layer is easy to
+follow. Two families illustrate the core ideas:
 
-- **Glow layers** — tiny single-purpose layers used to show layer composition.
-- **Multi-arch alpine** — a small base used to demonstrate index aggregation
+- **Glow layers** — tiny single-purpose layers that show layer composition.
+- **Multi-arch alpine** — a small base that demonstrates index aggregation
   (`amd64` + `arm64` under one tag).
-
-## Seeding the set
-
-The images are seeded idempotently from the compose Taskfile:
-
-```bash
-# Bring the stack up
-task compose:up
-
-# Seed the demo images + graph (glow layers, multi-arch alpine)
-task compose:seed:glow
-task compose:multi-alpine
-```
-
-After seeding, the graph computes the manifests and manifest lists:
-
-```bash
-task compose:seed:graph
-```
 
 ## What you see
 
 | Concept | Where it shows up |
 |---|---|
-| Individual layers | `/collections` in the UI, expand a manifest row |
+| Individual layers | **Collections**, expand a manifest row |
 | Manifest (single arch) | manifest detail, with config + layers inline |
 | Manifest list (multi-arch) | one tag resolving to `amd64` / `arm64` |
 | Content size | shown per manifest (the real blob size) |
-
-!!! tip "Keep it minimal for a live audience"
-    Seed only the glow set and one multi-arch base. Larger sets make the graph
-    harder to read on a projector.
 
 ## Diagram
 

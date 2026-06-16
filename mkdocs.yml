@@ -6,6 +6,11 @@ site_url: https://docs.metahub.hvk/
 docs_dir: docs
 site_dir: site
 
+# Footer shows the build version, resolved by misc/version.sh using the same
+# git-tag logic as the GoCD pipelines (exact tag -> tag, else main:<sha>).
+# Injected at build time via the MKDOCS_VERSION env var.
+copyright: !ENV [MKDOCS_COPYRIGHT, "MetaHub Docs"]
+
 theme:
   name: material
   palette:
@@ -51,7 +56,10 @@ nav:
       - Small Images: small-images.md
       - Manipulations: manipulations.md
       - ORAS Artefacts: oras-artefacts.md
-      - Walkthrough: walkthrough.md
+
+extra:
+  # Build version (git tag or main:<sha>), injected by misc/mkdocs-build.sh.
+  version: !ENV [MKDOCS_VERSION, "dev"]
 
 # Fail the build on broken internal links / nav (CI runs `mkdocs build --strict`).
 strict: true

@@ -7,22 +7,28 @@ tasks:
     cmds:
       - ./misc/diagrams/render-all.sh {{.CLI_ARGS}}
 
-  # Live preview at http://127.0.0.1:8000
+  # Print the resolved docs version (git tag or main:<sha>)
+  version:
+    desc: Print the docs version (same tag logic as the pipelines)
+    cmds:
+      - ./misc/version.sh
+
+  # Live preview at http://127.0.0.1:8000 (version baked into footer)
   serve:
     desc: Serve the docs locally with live reload
     cmds:
-      - mkdocs serve
+      - ./misc/mkdocs-build.sh serve
 
-  # What CI runs: fail on broken links / nav
+  # What CI runs: fail on broken links / nav (version baked into footer)
   check:
     desc: Build the site with --strict (CI gate)
     cmds:
-      - mkdocs build --strict
+      - ./misc/mkdocs-build.sh
 
   build:
     desc: Build the runtime container image
     cmds:
-      - docker build . -t metahub-docs
+      - docker build . --build-arg DOCS_VERSION="$(./misc/version.sh)" -t metahub-docs
 
   git:*:
     vars:
