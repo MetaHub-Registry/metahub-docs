@@ -1,0 +1,180 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "type": "text", "id": "title",
+      "x": 320, "y": 30, "width": 600, "height": 32,
+      "text": "ORAS Referrers / Discovery",
+      "originalText": "ORAS Referrers / Discovery",
+      "fontSize": 28, "fontFamily": 3, "textAlign": "left", "verticalAlign": "top",
+      "strokeColor": "#1e40af", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400001, "version": 1, "versionNonce": 400002,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": null, "lineHeight": 1.25
+    },
+    {
+      "type": "text", "id": "subtitle",
+      "x": 320, "y": 68, "width": 700, "height": 22,
+      "text": "referrers point at a subject; oras discover walks them back",
+      "originalText": "referrers point at a subject; oras discover walks them back",
+      "fontSize": 15, "fontFamily": 3, "textAlign": "left", "verticalAlign": "top",
+      "strokeColor": "#64748b", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400003, "version": 1, "versionNonce": 400004,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": null, "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "id": "subject",
+      "x": 120, "y": 240, "width": 260, "height": 110,
+      "strokeColor": "#1e3a5f", "backgroundColor": "#3b82f6",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400010, "version": 1, "versionNonce": 400011,
+      "isDeleted": false, "groupIds": [],
+      "boundElements": [{"id": "subject_txt", "type": "text"}],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "text", "id": "subject_txt",
+      "x": 135, "y": 268, "width": 230, "height": 55,
+      "text": "subject\nhello-artifact:v1\nrocket.config",
+      "originalText": "subject\nhello-artifact:v1\nrocket.config",
+      "fontSize": 15, "fontFamily": 3, "textAlign": "center", "verticalAlign": "middle",
+      "strokeColor": "#ffffff", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400012, "version": 1, "versionNonce": 400013,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": "subject", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "id": "sbom",
+      "x": 600, "y": 150, "width": 240, "height": 80,
+      "strokeColor": "#1e3a5f", "backgroundColor": "#93c5fd",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400020, "version": 1, "versionNonce": 400021,
+      "isDeleted": false, "groupIds": [],
+      "boundElements": [{"id": "sbom_txt", "type": "text"}],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "text", "id": "sbom_txt",
+      "x": 615, "y": 170, "width": 210, "height": 40,
+      "text": "referrer: SBOM\nacme.sbom",
+      "originalText": "referrer: SBOM\nacme.sbom",
+      "fontSize": 15, "fontFamily": 3, "textAlign": "center", "verticalAlign": "middle",
+      "strokeColor": "#374151", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400022, "version": 1, "versionNonce": 400023,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": "sbom", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "id": "sig",
+      "x": 600, "y": 360, "width": 240, "height": 80,
+      "strokeColor": "#1e3a5f", "backgroundColor": "#93c5fd",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400030, "version": 1, "versionNonce": 400031,
+      "isDeleted": false, "groupIds": [],
+      "boundElements": [{"id": "sig_txt", "type": "text"}],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "text", "id": "sig_txt",
+      "x": 615, "y": 380, "width": 210, "height": 40,
+      "text": "referrer: signature\nacme.signature",
+      "originalText": "referrer: signature\nacme.signature",
+      "fontSize": 15, "fontFamily": 3, "textAlign": "center", "verticalAlign": "middle",
+      "strokeColor": "#374151", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400032, "version": 1, "versionNonce": 400033,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": "sig", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "id": "arrow_sbom_subject",
+      "x": 595, "y": 200, "width": -210, "height": 70,
+      "strokeColor": "#1e3a5f", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400040, "version": 1, "versionNonce": 400041,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false,
+      "points": [[0, 0], [-210, 70]],
+      "startBinding": {"elementId": "sbom", "focus": 0, "gap": 6},
+      "endBinding": {"elementId": "subject", "focus": 0, "gap": 6},
+      "startArrowhead": null, "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow", "id": "arrow_sig_subject",
+      "x": 595, "y": 390, "width": -210, "height": -70,
+      "strokeColor": "#1e3a5f", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400042, "version": 1, "versionNonce": 400043,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false,
+      "points": [[0, 0], [-210, -70]],
+      "startBinding": {"elementId": "sig", "focus": 0, "gap": 6},
+      "endBinding": {"elementId": "subject", "focus": 0, "gap": 6},
+      "startArrowhead": null, "endArrowhead": "arrow"
+    },
+    {
+      "type": "text", "id": "subject_of_lbl",
+      "x": 410, "y": 175, "width": 170, "height": 20,
+      "text": "subject (refers to)",
+      "originalText": "subject (refers to)",
+      "fontSize": 13, "fontFamily": 3, "textAlign": "center", "verticalAlign": "top",
+      "strokeColor": "#64748b", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400044, "version": 1, "versionNonce": 400045,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": null, "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle",       "id": "code",
+      "x": 120, "y": 480, "width": 720, "height": 110,
+      "strokeColor": "#1e293b", "backgroundColor": "#1e293b",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400050, "version": 1, "versionNonce": 400051,
+      "isDeleted": false, "groupIds": [],
+      "boundElements": [{"id": "code_txt", "type": "text"}],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "text",       "id": "code_txt",
+      "x": 140, "y": 498, "width": 680, "height": 75,
+      "text": "$ oras discover --plain-http $MH/hello-artifact:v1 -o tree\nhello-artifact:v1\n├── acme.sbom        sha256:a1b2...\n└── acme.signature   sha256:c3d4...",
+      "originalText": "$ oras discover --plain-http $MH/hello-artifact:v1 -o tree\nhello-artifact:v1\n├── acme.sbom        sha256:a1b2...\n└── acme.signature   sha256:c3d4...",
+      "fontSize": 14, "fontFamily": 3, "textAlign": "left", "verticalAlign": "middle",
+      "strokeColor": "#22c55e", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 400052, "version": 1, "versionNonce": 400053,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": "code", "lineHeight": 1.4
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": 20
+  },
+  "files": {}
+}

@@ -1,0 +1,11 @@
+site/
+.cache/
+.git/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+README.md
+misc/
+Taskfile.yaml

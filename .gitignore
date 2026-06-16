@@ -1,0 +1,9 @@
+site/
+.cache/
+__pycache__/
+*.pyc
+.venv/
+venv/
+misc/diagrams/.venv/
+uv.lock
+.DS_Store

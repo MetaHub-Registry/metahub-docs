@@ -1,0 +1,32 @@
+version: '3'
+
+tasks:
+  # Render all .excalidraw diagram sources to PNG (or pass names: task render -- foo bar)
+  render:
+    desc: Render docs/assets/diagrams/*.excalidraw to PNG
+    cmds:
+      - ./misc/diagrams/render-all.sh {{.CLI_ARGS}}
+
+  # Live preview at http://127.0.0.1:8000
+  serve:
+    desc: Serve the docs locally with live reload
+    cmds:
+      - mkdocs serve
+
+  # What CI runs: fail on broken links / nav
+  check:
+    desc: Build the site with --strict (CI gate)
+    cmds:
+      - mkdocs build --strict
+
+  build:
+    desc: Build the runtime container image
+    cmds:
+      - docker build . -t metahub-docs
+
+  git:*:
+    vars:
+      GCMD: '{{index .MATCH 0}}'
+    cmds:
+      - git commit -{{.GCMD}} {{.CLI_ARGS}}
+      - git push

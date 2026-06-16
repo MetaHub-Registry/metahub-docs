@@ -1,0 +1,57 @@
+site_name: MetaHub Docs
+site_description: >-
+  Profile-aware container image registry — demo walkthroughs for small images,
+  layer manipulations, and ORAS artefacts.
+site_url: https://docs.metahub.hvk/
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - Demo:
+      - Small Images: small-images.md
+      - Manipulations: manipulations.md
+      - ORAS Artefacts: oras-artefacts.md
+      - Walkthrough: walkthrough.md
+
+# Fail the build on broken internal links / nav (CI runs `mkdocs build --strict`).
+strict: true
