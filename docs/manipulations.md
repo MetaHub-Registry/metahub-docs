@@ -102,6 +102,51 @@ docker run …/ftest:latest
 The help renders, then control hands off cleanly to the original program — the
 entrypoint is *prepended*, not replaced wholesale.
 
+## Running it
+
+Pull and run the manipulated image and you see the overlay take effect at
+runtime — the help page renders, then the original program runs:
+
+```console
+$ docker run --pull=always --platform=linux/amd64 -ti --rm \
+    metahub.metahub.hvk/qnib/ftest:latest
+latest: Pulling from qnib/ftest
+Digest: sha256:85ee98882f06372107584548cc3dbc5ecc9faf332db04241133e238fcbbc349e
+Status: Image is up to date for metahub.metahub.hvk/qnib/ftest:latest
+
+   HPC3 Help
+
+  This message is the default message found in /usr/share/hpc3/help.md.
+
+  Either replace that file or change the environment variable HPC_HELP to
+  render a different markdown file.
+
+>> This container is not optimized for a specific cpu target
+```
+
+The `HPC3 Help` block comes from the **glow layers** (the `glow` binary +
+`help.md`, added by the manipulation); the final line comes from the **original
+`entry.sh`** the overlay execs into.
+
+## Why overlay layers are powerful
+
+Because a manipulation adds real filesystem layers, it can inject anything an
+image needs — without rebuilding the upstream image:
+
+- **Config files** — drop in a tuned `help.md`, a site config, certificates,
+  policy files, etc. (here, `/usr/share/hpc3/help.md`).
+- **Binaries and tooling** — add helpers like the `glow` renderer, a debugger,
+  or an init wrapper that the base image doesn't ship.
+- **Environment + entrypoint wiring** — set the env and entrypoint so the
+  injected tooling actually runs (here, `HPC3_HELP` + `/usr/bin/hpc3-help`).
+
+Crucially, the overlay is **architecture-aware**: the `glow-extended` variants
+ship per-architecture layers (the `amd64` variant carries amd64 glow binaries,
+`arm64` carries arm64), selected the same way the microarchitecture variants
+are. So an injected binary always matches the host it lands on and **keeps
+running** — you never overlay an amd64 helper onto an arm64 image. One tag, the
+right tooling for each architecture.
+
 ## Defaults and variants
 
 A manipulation has a **default** form and zero or more **variants**. The profile
