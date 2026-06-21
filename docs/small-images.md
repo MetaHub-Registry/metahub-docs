@@ -8,11 +8,11 @@ depending on the profile you logged in with.
 ## The profile comes from your login
 
 MetaHub reads the profile from the credential you log in with. The username
-carries the profile selector — for example `oci/cpu#zen2` asks for the **zen2**
+carries the profile selector — for example `meta/cpu#zen2` asks for the **zen2**
 microarchitecture:
 
-```console
-$ docker login -u 'oci/cpu#zen2' -p oci metahub-registry.org
+```{ .console .no-copy }
+$ docker login -u 'meta/cpu#zen2' -p hub metahub-registry.org
 Login Succeeded
 
 $ docker run --pull=always --platform=linux/amd64 -ti --rm \
@@ -33,7 +33,7 @@ based on your profile, then Docker's normal platform matching does the rest.
 
 **No profile** — the index contains the full multi-arch set (`arm64` + `amd64`):
 
-```console
+```{ .console .no-copy }
 $ manifest-tool inspect metahub-registry.org/qnib/ftest:latest
 Digest: sha256:0a246bae83a800a774d051131334f842f8b72af2ccfe204b21afa4b3de9164ee
  * Contains 2 manifest references (2 images, 0 attestation):
@@ -44,8 +44,8 @@ Digest: sha256:0a246bae83a800a774d051131334f842f8b72af2ccfe204b21afa4b3de9164ee
 **With `cpu#zen2`** — the index is filtered to the single zen2-optimised
 manifest, so the same tag now resolves to a different image index digest:
 
-```console
-$ docker login -u 'oci/cpu#zen2' -p oci metahub-registry.org
+```{ .console .no-copy }
+$ docker login -u 'meta/cpu#zen2' -p hub metahub-registry.org
 $ manifest-tool inspect metahub-registry.org/qnib/ftest:latest
 Digest: sha256:efdbcb14a0ea770a1b797d2c6aa3d5e753ddc25cf3b8bfddf45e1a3bd6f4cc8b
  * Contains 1 manifest references (1 image, 0 attestation):
@@ -60,19 +60,19 @@ the zen2 build, served because the login asked for it.
 Log in with a different selector and the filtered index (and therefore the
 image you run) changes accordingly:
 
-```console
+```{ .console .no-copy }
 # cpu#zen3 -> Zen 3 optimised image
-$ docker login -u 'oci/cpu#zen3' -p oci metahub-registry.org
+$ docker login -u 'meta/cpu#zen3' -p hub metahub-registry.org
 $ docker run --pull=always --rm metahub-registry.org/qnib/ftest:latest
 >> This container is optimized for the microarchitecture 'zen3'
 
 # cpu#zen2 -> Zen 2 optimised image
-$ docker login -u 'oci/cpu#zen2' -p oci metahub-registry.org
+$ docker login -u 'meta/cpu#zen2' -p hub metahub-registry.org
 $ docker run --pull=always --rm metahub-registry.org/qnib/ftest:latest
 >> This container is optimized for the microarchitecture 'zen2'
 
 # no microarchitecture selector -> generic baseline
-$ docker login -u 'oci' -p oci metahub-registry.org
+$ docker login -u 'meta' -p hub metahub-registry.org
 $ docker run --pull=always --rm metahub-registry.org/qnib/ftest:latest
 >> This container is optimized for the microarchitecture 'generic'
 ```
@@ -84,9 +84,9 @@ selecting the best-suited manifest list for the profile.
 
 | Login selector | Variant served | Built for |
 |---|---|---|
-| `oci/cpu#zen3` | `zen3` | AMD Zen 3 cores |
-| `oci/cpu#zen2` | `zen2` | AMD Zen 2 cores |
-| `oci` (no selector) | `generic` | any `x86-64` baseline — the safe fallback |
+| `meta/cpu#zen3` | `zen3` | AMD Zen 3 cores |
+| `meta/cpu#zen2` | `zen2` | AMD Zen 2 cores |
+| `meta` (no selector) | `generic` | any `x86-64` baseline — the safe fallback |
 
 Each variant is its own manifest list behind the shared `:latest` tag.
 

@@ -31,6 +31,9 @@ theme:
     - navigation.tracking
     - navigation.sections
     - navigation.top
+    # Copy button on by default; output/session blocks (console transcripts,
+    # json output) opt out per block with `{ .console .no-copy }` so the copy
+    # symbol only appears on blocks with no output.
     - content.code.copy
     - content.code.annotate
     - toc.follow

@@ -26,14 +26,14 @@ page before running its real program.
 First, for reference, pull with a plain microarchitecture profile — no
 manipulation, just the base image:
 
-```console
-$ echo oci | docker login --password-stdin -u 'oci/cpu#zen3' metahub-registry.org
+```{ .console .no-copy }
+$ echo hub | docker login --password-stdin -u 'meta/cpu#zen3' metahub-registry.org
 Login Succeeded
 
 $ docker pull --platform=linux/amd64 metahub-registry.org/qnib/ftest:latest
 $ docker inspect metahub-registry.org/qnib/ftest:latest
 ```
-```json
+```{ .json .no-copy }
 "Config": {
     "Env": [ "...", "ORG_SUPERCONTAINERS_HARDWARE_CPU_TARGET_MICROARCH=zen3" ],
     "Cmd": [ "/usr/bin/entry.sh" ],
@@ -51,14 +51,14 @@ No `Entrypoint`, **2 layers** — this is the unmanipulated image.
 
 Now pull the same tag with the `glow-extended` profile:
 
-```console
-$ echo oci | docker login --password-stdin -u 'oci/glow-extended#1.5.0' metahub-registry.org
+```{ .console .no-copy }
+$ echo hub | docker login --password-stdin -u 'meta/glow-extended#1.5.0' metahub-registry.org
 Login Succeeded
 
 $ docker pull --platform=linux/amd64 metahub-registry.org/qnib/ftest:latest
 $ docker inspect metahub-registry.org/qnib/ftest:latest
 ```
-```json
+```{ .json .no-copy }
 "Config": {
     "Env": [
         "...",
@@ -107,7 +107,7 @@ entrypoint is *prepended*, not replaced wholesale.
 Pull and run the manipulated image and you see the overlay take effect at
 runtime — the help page renders, then the original program runs:
 
-```console
+```{ .console .no-copy }
 $ docker run --pull=always --platform=linux/amd64 -ti --rm \
     metahub-registry.org/qnib/ftest:latest
 latest: Pulling from qnib/ftest
