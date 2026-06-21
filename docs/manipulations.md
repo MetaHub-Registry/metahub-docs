@@ -27,11 +27,11 @@ First, for reference, pull with a plain microarchitecture profile — no
 manipulation, just the base image:
 
 ```console
-$ echo oci | docker login --password-stdin -u 'oci/cpu#zen3' metahub.metahub.hvk
+$ echo oci | docker login --password-stdin -u 'oci/cpu#zen3' metahub-registry.org
 Login Succeeded
 
-$ docker pull --platform=linux/amd64 metahub.metahub.hvk/qnib/ftest:latest
-$ docker inspect metahub.metahub.hvk/qnib/ftest:latest
+$ docker pull --platform=linux/amd64 metahub-registry.org/qnib/ftest:latest
+$ docker inspect metahub-registry.org/qnib/ftest:latest
 ```
 ```json
 "Config": {
@@ -52,11 +52,11 @@ No `Entrypoint`, **2 layers** — this is the unmanipulated image.
 Now pull the same tag with the `glow-extended` profile:
 
 ```console
-$ echo oci | docker login --password-stdin -u 'oci/glow-extended#1.5.0' metahub.metahub.hvk
+$ echo oci | docker login --password-stdin -u 'oci/glow-extended#1.5.0' metahub-registry.org
 Login Succeeded
 
-$ docker pull --platform=linux/amd64 metahub.metahub.hvk/qnib/ftest:latest
-$ docker inspect metahub.metahub.hvk/qnib/ftest:latest
+$ docker pull --platform=linux/amd64 metahub-registry.org/qnib/ftest:latest
+$ docker inspect metahub-registry.org/qnib/ftest:latest
 ```
 ```json
 "Config": {
@@ -109,10 +109,10 @@ runtime — the help page renders, then the original program runs:
 
 ```console
 $ docker run --pull=always --platform=linux/amd64 -ti --rm \
-    metahub.metahub.hvk/qnib/ftest:latest
+    metahub-registry.org/qnib/ftest:latest
 latest: Pulling from qnib/ftest
 Digest: sha256:85ee98882f06372107584548cc3dbc5ecc9faf332db04241133e238fcbbc349e
-Status: Image is up to date for metahub.metahub.hvk/qnib/ftest:latest
+Status: Image is up to date for metahub-registry.org/qnib/ftest:latest
 
    HPC3 Help
 

@@ -2,7 +2,7 @@ site_name: MetaHub Docs
 site_description: >-
   Profile-aware container image registry — demo walkthroughs for small images,
   layer manipulations, and ORAS artefacts.
-site_url: https://docs.metahub.hvk/
+site_url: https://docs.metahub-registry.org/
 docs_dir: docs
 site_dir: site
 
