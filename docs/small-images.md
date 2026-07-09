@@ -12,14 +12,14 @@ carries the profile selector — for example `meta/cpu#zen2` asks for the **zen2
 microarchitecture:
 
 ```{ .console .no-copy }
-$ docker login -u 'meta/cpu#zen2' -p hub metahub-registry.org
+$ docker login -u 'meta/cpu#zen2' -p hub {{ registry }}
 Login Succeeded
 
 $ docker run --pull=always --platform=linux/amd64 -ti --rm \
-    metahub-registry.org/qnib/ftest:latest
+    {{ registry }}/qnib/ftest:latest
 latest: Pulling from qnib/ftest
 Digest: sha256:efdbcb14a0ea770a1b797d2c6aa3d5e753ddc25cf3b8bfddf45e1a3bd6f4cc8b
-Status: Downloaded newer image for metahub-registry.org/qnib/ftest:latest
+Status: Downloaded newer image for {{ registry }}/qnib/ftest:latest
 >> This container is optimized for the microarchitecture 'zen2'
 ```
 
@@ -34,7 +34,7 @@ based on your profile, then Docker's normal platform matching does the rest.
 **No profile** — the index contains the full multi-arch set (`arm64` + `amd64`):
 
 ```{ .console .no-copy }
-$ manifest-tool inspect metahub-registry.org/qnib/ftest:latest
+$ manifest-tool inspect {{ registry }}/qnib/ftest:latest
 Digest: sha256:0a246bae83a800a774d051131334f842f8b72af2ccfe204b21afa4b3de9164ee
  * Contains 2 manifest references (2 images, 0 attestation):
 [1] Platform:  OS: linux  Arch: arm64
@@ -45,8 +45,8 @@ Digest: sha256:0a246bae83a800a774d051131334f842f8b72af2ccfe204b21afa4b3de9164ee
 manifest, so the same tag now resolves to a different image index digest:
 
 ```{ .console .no-copy }
-$ docker login -u 'meta/cpu#zen2' -p hub metahub-registry.org
-$ manifest-tool inspect metahub-registry.org/qnib/ftest:latest
+$ docker login -u 'meta/cpu#zen2' -p hub {{ registry }}
+$ manifest-tool inspect {{ registry }}/qnib/ftest:latest
 Digest: sha256:efdbcb14a0ea770a1b797d2c6aa3d5e753ddc25cf3b8bfddf45e1a3bd6f4cc8b
  * Contains 1 manifest references (1 image, 0 attestation):
 [1] Platform:  OS: linux  Arch: amd64
@@ -62,18 +62,18 @@ image you run) changes accordingly:
 
 ```{ .console .no-copy }
 # cpu#zen3 -> Zen 3 optimised image
-$ docker login -u 'meta/cpu#zen3' -p hub metahub-registry.org
-$ docker run --pull=always --rm metahub-registry.org/qnib/ftest:latest
+$ docker login -u 'meta/cpu#zen3' -p hub {{ registry }}
+$ docker run --pull=always --rm {{ registry }}/qnib/ftest:latest
 >> This container is optimized for the microarchitecture 'zen3'
 
 # cpu#zen2 -> Zen 2 optimised image
-$ docker login -u 'meta/cpu#zen2' -p hub metahub-registry.org
-$ docker run --pull=always --rm metahub-registry.org/qnib/ftest:latest
+$ docker login -u 'meta/cpu#zen2' -p hub {{ registry }}
+$ docker run --pull=always --rm {{ registry }}/qnib/ftest:latest
 >> This container is optimized for the microarchitecture 'zen2'
 
 # no microarchitecture selector -> generic baseline
-$ docker login -u 'meta' -p hub metahub-registry.org
-$ docker run --pull=always --rm metahub-registry.org/qnib/ftest:latest
+$ docker login -u 'meta' -p hub {{ registry }}
+$ docker run --pull=always --rm {{ registry }}/qnib/ftest:latest
 >> This container is optimized for the microarchitecture 'generic'
 ```
 
