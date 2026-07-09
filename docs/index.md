@@ -24,4 +24,9 @@ UI and try with standard OCI tooling.
 
     Pushing and discovering OCI artefacts (referrers) with `oras`.
 
+-   :material-brain: **[Model Injection](models.md)**
+
+    Delivering a large GGUF model as a layer injected into a base image,
+    sized to the user's VRAM profile.
+
 </div>

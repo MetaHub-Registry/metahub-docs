@@ -8,13 +8,13 @@ endpoint.
 
 ```bash
 # Log in to the MetaHub registry
-oras login -u "${OCI_USERNAME}" -p "${OCI_PASSWORD}" "${MH_HOST}"
+oras login -u meta -p hub "{{ registry }}"
 
 # Create a tiny payload
 echo "hello world" > artifact.txt
 
 # Push it with a custom artifact type
-oras push "${MH_HOST}/hello-artifact:v1" \
+oras push "{{ registry }}/hello-artifact:v1" \
   --artifact-type "application/vnd.acme.rocket.config" \
   ./artifact.txt
 ```
@@ -22,7 +22,7 @@ oras push "${MH_HOST}/hello-artifact:v1" \
 Verify the stored `artifactType`:
 
 ```bash
-oras manifest fetch "${MH_HOST}/hello-artifact:v1" --pretty \
+oras manifest fetch "{{ registry }}/hello-artifact:v1" --pretty \
   | jq -r .artifactType
 # -> application/vnd.acme.rocket.config
 ```
@@ -34,12 +34,12 @@ discover it:
 
 ```bash
 # Attach an artefact that references the subject
-oras attach "${MH_HOST}/hello-artifact:v1" \
+oras attach "{{ registry }}/hello-artifact:v1" \
   --artifact-type "application/vnd.acme.sbom" \
   ./sbom.json
 
 # Discover referrers of the subject
-oras discover "${MH_HOST}/hello-artifact:v1" -o tree
+oras discover "{{ registry }}/hello-artifact:v1" -o tree
 ```
 
 ## In the UI

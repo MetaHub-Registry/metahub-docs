@@ -27,11 +27,11 @@ First, for reference, pull with a plain microarchitecture profile — no
 manipulation, just the base image:
 
 ```{ .console .no-copy }
-$ echo hub | docker login --password-stdin -u 'meta/cpu#zen3' metahub-registry.org
+$ echo hub | docker login --password-stdin -u 'meta/cpu#zen3' {{ registry }}
 Login Succeeded
 
-$ docker pull --platform=linux/amd64 metahub-registry.org/qnib/ftest:latest
-$ docker inspect metahub-registry.org/qnib/ftest:latest
+$ docker pull --platform=linux/amd64 {{ registry }}/qnib/ftest:latest
+$ docker inspect {{ registry }}/qnib/ftest:latest
 ```
 ```{ .json .no-copy }
 "Config": {
@@ -52,11 +52,11 @@ No `Entrypoint`, **2 layers** — this is the unmanipulated image.
 Now pull the same tag with the `glow-extended` profile:
 
 ```{ .console .no-copy }
-$ echo hub | docker login --password-stdin -u 'meta/glow-extended#1.5.0' metahub-registry.org
+$ echo hub | docker login --password-stdin -u 'meta/glow-extended#1.5.0' {{ registry }}
 Login Succeeded
 
-$ docker pull --platform=linux/amd64 metahub-registry.org/qnib/ftest:latest
-$ docker inspect metahub-registry.org/qnib/ftest:latest
+$ docker pull --platform=linux/amd64 {{ registry }}/qnib/ftest:latest
+$ docker inspect {{ registry }}/qnib/ftest:latest
 ```
 ```{ .json .no-copy }
 "Config": {
@@ -109,10 +109,10 @@ runtime — the help page renders, then the original program runs:
 
 ```{ .console .no-copy }
 $ docker run --pull=always --platform=linux/amd64 -ti --rm \
-    metahub-registry.org/qnib/ftest:latest
+    {{ registry }}/qnib/ftest:latest
 latest: Pulling from qnib/ftest
 Digest: sha256:85ee98882f06372107584548cc3dbc5ecc9faf332db04241133e238fcbbc349e
-Status: Image is up to date for metahub-registry.org/qnib/ftest:latest
+Status: Image is up to date for {{ registry }}/qnib/ftest:latest
 
    HPC3 Help
 

@@ -38,6 +38,10 @@ theme:
     - content.code.annotate
     - toc.follow
 
+plugins:
+  - search
+  - macros
+
 markdown_extensions:
   - admonition
   - attr_list
@@ -62,10 +66,13 @@ nav:
       - Small Images: small-images.md
       - Manipulations: manipulations.md
       - ORAS Artefacts: oras-artefacts.md
+      - Model Injection: models.md
+      - "Showcase: MiniCPM5-1B": minicpm5.md
 
 extra:
   # Build version (git tag or main:<sha>), injected by misc/mkdocs-build.sh.
   version: !ENV [MKDOCS_VERSION, "dev"]
+  registry: !ENV [METAHUB_REGISTRY, "metahub-registry.org"]
 
 # Fail the build on broken internal links / nav (CI runs `mkdocs build --strict`).
 strict: true
