@@ -1,0 +1,122 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "type": "text", "id": "title",
+      "x": 90, "y": 30, "width": 700, "height": 34,
+      "text": "From images to anything",
+      "originalText": "From images to anything",
+      "fontSize": 28, "fontFamily": 3, "textAlign": "left", "verticalAlign": "top",
+      "strokeColor": "#1e40af", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 510001, "version": 1, "versionNonce": 510002,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": null, "lineHeight": 1.25
+    },
+    {
+      "type": "text", "id": "subtitle",
+      "x": 90, "y": 70, "width": 760, "height": 22,
+      "text": "same blob-and-JSON plumbing, unbounded payload",
+      "originalText": "same blob-and-JSON plumbing, unbounded payload",
+      "fontSize": 15, "fontFamily": 3, "textAlign": "left", "verticalAlign": "top",
+      "strokeColor": "#64748b", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 510003, "version": 1, "versionNonce": 510004,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": null, "lineHeight": 1.25
+    },
+    {
+      "type": "rectangle", "id": "classic",
+      "x": 90, "y": 170, "width": 300, "height": 150,
+      "strokeColor": "#1e3a5f", "backgroundColor": "#3b82f6",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 510010, "version": 1, "versionNonce": 510011,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "text", "id": "classic_txt",
+      "x": 105, "y": 205, "width": 270, "height": 90,
+      "text": "Classic registry\n\nblobs + JSON manifest\n\u2192 container images",
+      "originalText": "Classic registry\n\nblobs + JSON manifest\n\u2192 container images",
+      "fontSize": 16, "fontFamily": 3, "textAlign": "center", "verticalAlign": "middle",
+      "strokeColor": "#ffffff", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 510012, "version": 1, "versionNonce": 510013,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": null, "lineHeight": 1.25
+    },
+    {
+      "type": "rectangle", "id": "oras",
+      "x": 710, "y": 150, "width": 360, "height": 210,
+      "strokeColor": "#1e3a5f", "backgroundColor": "#93c5fd",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 510020, "version": 1, "versionNonce": 510021,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "text", "id": "oras_txt",
+      "x": 725, "y": 172, "width": 330, "height": 150,
+      "text": "ORAS registry\n\nimages \u00b7 models \u00b7 datasets\nconfigs \u00b7 SBOMs \u00b7 signatures\nkernels \u00b7 skills \u00b7 agents \u2026",
+      "originalText": "ORAS registry\n\nimages \u00b7 models \u00b7 datasets\nconfigs \u00b7 SBOMs \u00b7 signatures\nkernels \u00b7 skills \u00b7 agents \u2026",
+      "fontSize": 16, "fontFamily": 3, "textAlign": "center", "verticalAlign": "middle",
+      "strokeColor": "#374151", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 510022, "version": 1, "versionNonce": 510023,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": null, "lineHeight": 1.25
+    },
+    {
+      "type": "arrow", "id": "arrow_evo",
+      "x": 400, "y": 245, "width": 300, "height": 0,
+      "strokeColor": "#1e3a5f", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 510030, "version": 1, "versionNonce": 510031,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false,
+      "points": [[0, 0], [300, 0]],
+      "startArrowhead": null, "endArrowhead": "arrow"
+    },
+    {
+      "type": "text", "id": "arrow_lbl",
+      "x": 435, "y": 210, "width": 230, "height": 20,
+      "text": "ORAS: serve anything",
+      "originalText": "ORAS: serve anything",
+      "fontSize": 14, "fontFamily": 3, "textAlign": "center", "verticalAlign": "top",
+      "strokeColor": "#64748b", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 510032, "version": 1, "versionNonce": 510033,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": null, "lineHeight": 1.25
+    },
+    {
+      "type": "text", "id": "scope_note",
+      "x": 710, "y": 372, "width": 360, "height": 24,
+      "text": "\u2192 what belongs here? scope explodes",
+      "originalText": "\u2192 what belongs here? scope explodes",
+      "fontSize": 15, "fontFamily": 3, "textAlign": "center", "verticalAlign": "top",
+      "strokeColor": "#dc2626", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 510034, "version": 1, "versionNonce": 510035,
+      "isDeleted": false, "groupIds": [], "boundElements": null,
+      "link": null, "locked": false, "containerId": null, "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": 20
+  },
+  "files": {}
+}

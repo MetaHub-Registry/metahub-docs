@@ -25,7 +25,9 @@ layer is a model weighing tens of gigabytes rather than a small helper.
 The model arrives like any other ORAS artefact — no special upload path. Because
 GGUF weights are large, MetaHub accepts the blob as a **chunked upload** and
 streams it straight to object storage, so a 10–100 GB push never has to be
-buffered in memory.
+buffered in memory. Uploads are **content-addressed**: if a blob whose digest is
+already in object storage is pushed again — a repeat push, or a re-seed — MetaHub
+skips the upload, so identical weights are never sent or stored twice.
 
 ```bash
 # Log in to the MetaHub registry
