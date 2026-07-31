@@ -68,6 +68,7 @@ nav:
       - ORAS Artefacts: oras-artefacts.md
       - Model Injection: models.md
       - "Showcase: MiniCPM5-1B": minicpm5.md
+  - Waldur Integration: waldur-integration.md
 
 extra:
   # Build version (git tag or main:<sha>), injected by misc/mkdocs-build.sh.
