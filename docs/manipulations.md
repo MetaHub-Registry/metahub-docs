@@ -17,6 +17,15 @@ image into a purpose-built variant for a given user context.
 The stored blobs are shared; only the manifest (and the small new layers) the
 client receives differ per profile.
 
+!!! note "Model-serving manipulations are model-centric only"
+    A **model-serving** manipulation — the `model/<name>` (weights) and
+    `config/<name>` (serving config) pair that [Model Injection](models.md)
+    creates — only applies to a **model-centric pull** (`models/<name>:<quant>`).
+    Pulling a plain collection image under the same model profile serves it
+    **un-injected**; the model only composes when the pulled tag *is* the model.
+    Every other manipulation (like `glow-extended` below) applies to any pull
+    under the profile that selects it.
+
 ## Example: the `glow-extended` profile
 
 The `glow-extended#1.5.0` profile overlays a help/“glow” layer set onto
