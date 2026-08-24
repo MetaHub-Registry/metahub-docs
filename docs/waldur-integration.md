@@ -17,8 +17,7 @@ instance. The mapping is by construction:
 | Order limit `storage` (GB) | → | project `quota_bytes` (1 GB = 1 GiB) |
 | Project members (SSO) | → | Authentik groups → pull/push authorization |
 
-![Waldur marketplace showing the MetaHub Registry Project offering](assets/screenshots/waldur-marketplace-offering.png)
-_Placeholder — replace with a screenshot (`docs/assets/screenshots/waldur-marketplace-offering.png`)._
+![Waldur marketplace showing the MetaHub Registry Project offering](assets/screenshots/waldur-marketplace-offering-0.png)
 
 ## The lifecycle loop
 

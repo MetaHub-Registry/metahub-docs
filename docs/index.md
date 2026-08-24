@@ -26,7 +26,7 @@ UI and try with standard OCI tooling.
 
 -   :material-brain: **[Model Injection](models.md)**
 
-    Delivering a large GGUF model as a layer injected into a base image,
-    sized to the user's VRAM profile.
+    Delivering a large GGUF model composed into a runtime image, sized
+    to the user's VRAM profile.
 
 </div>
