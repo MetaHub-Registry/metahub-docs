@@ -68,6 +68,7 @@ nav:
       - ORAS Artefacts: oras-artefacts.md
       - Model Injection: models.md
       - "Showcase: MiniCPM5-1B": minicpm5.md
+  - Agent Environment: outfitter.md
   - Waldur Integration: waldur-integration.md
 
 extra:

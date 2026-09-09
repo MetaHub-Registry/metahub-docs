@@ -1,5 +1,7 @@
 # Stage 1: Build (also used as the CI `--target build` test image)
-FROM python:3.12-alpine AS build
+# Pinned to $BUILDPLATFORM: mkdocs/pip run natively on the build agent (no
+# QEMU); site/ is static and gets COPY'd into the per-arch nginx:alpine below.
+FROM --platform=$BUILDPLATFORM python:3.12-alpine AS build
 
 WORKDIR /app
 
