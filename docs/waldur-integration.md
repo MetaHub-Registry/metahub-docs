@@ -10,12 +10,12 @@ store with global dedup). A Waldur project does **not** get its own registry; it
 configures a **namespace prefix + a storage quota + an access policy** on the shared
 instance. The mapping is by construction:
 
-| Waldur | → | MetaHub |
-|---|---|---|
-| Customer `customer-slug` | → | namespace org segment `<org>` |
-| Project `project-slug` | → | namespace `<org>/<project>` (the MetaHub project) |
-| Order limit `storage` (GB) | → | project `quota_bytes` (1 GB = 1 GiB) |
-| Project members (SSO) | → | Authentik groups → pull/push authorization |
+| Waldur                     | →   | MetaHub                                           |
+| -------------------------- | --- | ------------------------------------------------- |
+| Customer `customer-slug`   | →   | namespace org segment `<org>`                     |
+| Project `project-slug`     | →   | namespace `<org>/<project>` (the MetaHub project) |
+| Order limit `storage` (GB) | →   | project `quota_bytes` (1 GB = 1 GiB)              |
+| Project members (SSO)      | →   | Authentik groups → pull/push authorization        |
 
 ![Waldur marketplace showing the MetaHub Registry Project offering](assets/screenshots/waldur-marketplace-offering-0.png)
 
@@ -24,11 +24,11 @@ instance. The mapping is by construction:
 The [site-agent](#automation-the-site-agent) automates a small, well-defined loop
 between Waldur, MetaHub and Authentik:
 
-| Mode | Trigger | What happens |
-|---|---|---|
-| **order_process** | a create/update/terminate order | upsert the MetaHub project `<org>/<project>` with the ordered quota + visibility; delete on terminate |
-| **report** | periodic | read MetaHub usage and post it as the Waldur `storage` component usage |
-| **membership_sync** | project membership change | reconcile project members into the namespace's Authentik groups (add **and** remove) |
+| Mode                | Trigger                         | What happens                                                                                          |
+| ------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **order_process**   | a create/update/terminate order | upsert the MetaHub project `<org>/<project>` with the ordered quota + visibility; delete on terminate |
+| **report**          | periodic                        | read MetaHub usage and post it as the Waldur `storage` component usage                                |
+| **membership_sync** | project membership change       | reconcile project members into the namespace's Authentik groups (add **and** remove)                  |
 
 ## 1. Order → provision
 
@@ -37,8 +37,7 @@ provisions the namespace and applies the quota — idempotently, so a repeat ord
 an already-provisioned namespace just re-asserts quota/visibility rather than minting
 a second namespace (≤ 1 registry namespace per Waldur project).
 
-![Waldur order form for the MetaHub Registry offering with the storage quota field](assets/screenshots/waldur-order-form.png)
-_Placeholder — replace with a screenshot (`docs/assets/screenshots/waldur-order-form.png`)._
+![Waldur order form for the MetaHub Registry offering with the storage quota field](assets/screenshots/waldur-marketplace-offering-1-add)
 
 Under the hood the agent calls the MetaHub admin API:
 
@@ -46,6 +45,20 @@ Under the hood the agent calls the MetaHub admin API:
 POST /api/v1/protected/projects
 { "team_slug": "<org>", "project_slug": "<project>", "quota_bytes": <GiB×2^30> }
 ```
+
+### Approval & Provisioning
+
+The order is pending.
+
+![Waldur oder pending](assets/screenshots/waldur-marketplace-offering-3-pending.png)
+
+An admin needs to approved the order.
+
+![Waldur oder approval](assets/screenshots/waldur-marketplace-offering-2-approval.png)
+
+After which it will be deployed (project created and quotas in place).
+
+![Waldur oder deployed](assets/screenshots/waldur-marketplace-offering-4-ok.png)
 
 ## 2. Push & pull
 
@@ -76,16 +89,13 @@ GET /api/v1/protected/projects/<org>/<project>/usage
 → { "usage_bytes": 4092947, "quota_bytes": 107374182400 }
 ```
 
-![MetaHub project usage vs quota](assets/screenshots/metahub-project-usage.png)
-_Placeholder — replace with a screenshot (`docs/assets/screenshots/metahub-project-usage.png`)._
+![MetaHub project usage vs quota](assets/screenshots/waldur-project-usage.png)
 
 The `report` mode converts usage bytes → GB (2 decimals) and posts it to Waldur, where
 it appears on the resource as `current_usages` / `limit_usage` for the `storage`
 component — closing the accounting loop.
 
-![Waldur resource usage reported back by the site-agent](assets/screenshots/waldur-resource-usage.png)
-_Placeholder — replace with a screenshot (`docs/assets/screenshots/waldur-resource-usage.png`)._
-
+<!--
 ## 4. Per-user usage attribution
 
 Beyond the project total, MetaHub attributes usage to the **individual pushers**,
@@ -99,15 +109,13 @@ GET /api/v1/protected/projects/<org>/<project>/usage?by=user
 → { "usages": { "alice": 1815466.5, "bob": 1815466.5 }, "quota_bytes": 1073741824 }
 ```
 
-![MetaHub per-user usage split via ?by=user](assets/screenshots/metahub-per-user-usage.png)
-_Placeholder — replace with a screenshot (`docs/assets/screenshots/metahub-per-user-usage.png`)._
-
 !!! info "Reconciliation & the `unknown` bucket"
     The sum of the per-user shares plus a reserved `unknown` bucket always equals the
     project total. `unknown` holds bytes with no attributable pusher — compute-generated
     artefacts (model repackaging/injection) or pushes recorded before per-user tracking.
     The site-agent reports the real users to Waldur and drops `unknown` (that remainder
     stays implicit in the account total).
+-->
 
 ## Automation: the site-agent
 
