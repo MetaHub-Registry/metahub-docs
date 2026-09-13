@@ -5,8 +5,8 @@ into account to deliver the best-suited container image. It sits in front of an
 OCI registry and computes profile-aware image indexes from a graph of
 manifests, collections, rules and profiles.
 
-This site is a guide to three capabilities, with concepts you can see in the
-UI and try with standard OCI tooling.
+This site is a guide to MetaHub's core capabilities, with concepts you can see
+in the UI and try with standard OCI tooling.
 
 <div class="grid cards" markdown>
 
@@ -28,5 +28,9 @@ UI and try with standard OCI tooling.
 
     Delivering a large GGUF model composed into a runtime image, sized
     to the user's VRAM profile.
+
+-   :material-cloud-download: **[Pull-Through Cache](pull-through-cache.md)**
+
+    Mirroring and caching upstream images on demand, per profile.
 
 </div>
