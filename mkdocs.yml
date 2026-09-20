@@ -69,6 +69,7 @@ nav:
       - Model Injection: models.md
       - "Showcase: MiniCPM5-1B": minicpm5.md
   - Pull-Through Cache: pull-through-cache.md
+  - Profile Resolution: profile-resolution.md
   - Agent Environment: outfitter.md
   - Waldur Integration: waldur-integration.md
 
