@@ -70,6 +70,9 @@ nav:
       - "Showcase: MiniCPM5-1B": minicpm5.md
   - Pull-Through Cache: pull-through-cache.md
   - Profile Resolution: profile-resolution.md
+  - Reference:
+      - Trust Model: trust-model.md
+      - API: api.md
   - Agent Environment: outfitter.md
   - Waldur Integration: waldur-integration.md
 
