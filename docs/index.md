@@ -33,4 +33,9 @@ in the UI and try with standard OCI tooling.
 
     Mirroring and caching upstream images on demand, per profile.
 
+-   :material-ip-network: **[Profile Resolution](profile-resolution.md)**
+
+    Assigning the pull profile from the client's IP — headless nodes get
+    their profile without a login suffix.
+
 </div>

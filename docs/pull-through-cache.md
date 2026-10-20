@@ -14,8 +14,8 @@ anonymous pulls participate:
 
 ```yaml
 registries:
-  - name: harbor.example.com      # the alias used in image paths
-    url: harbor.example.com       # the upstream endpoint
+  - name: registry.example.com      # the alias used in image paths
+    url: registry.example.com       # the upstream endpoint
     tls: false
     allow_anon: true          # the upstream is pulled anonymously
     pull_through:
@@ -32,7 +32,7 @@ registries:
 The image path is `<MetaHub>/<alias>/<upstream-repo>:<tag>`:
 
 ```{ .console .no-copy }
-$ docker pull {{ registry }}/harbor.example.com/library/alpine:3.24
+$ docker pull {{ registry }}/registry.example.com/library/alpine:3.24
 ```
 
 On the first pull MetaHub discovers the upstream manifest, ingests it

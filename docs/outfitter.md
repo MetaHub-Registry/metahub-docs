@@ -269,7 +269,7 @@ components:
       transport: { type: stdio }
       runner:
         oci: "ghcr.io/victoriametrics-community/mcp-victoriatraces"
-        hosts: { "vt.example.com": "192.168.5.201" }
+        hosts: { "vt.example.com": "192.0.2.201" }
       env:
         VT_INSTANCE_ENTRYPOINT: "http://vt.example.com"
 ```
@@ -285,7 +285,7 @@ components:
           runner:
             oci: "ghcr.io/victoriametrics-community/mcp-victoriatraces"
             hosts:
-              "vt.example.com": "192.168.5.201"
+              "vt.example.com": "192.0.2.201"
           env:
             VT_INSTANCE_ENTRYPOINT: "http://vt.example.com"
     ```
@@ -300,7 +300,7 @@ components:
           "enabled": true,
           "command": [
             "docker", "run", "--rm", "-i",
-            "--add-host", "vt.example.com:192.168.5.201",
+            "--add-host", "vt.example.com:192.0.2.201",
             "-e", "VT_INSTANCE_ENTRYPOINT",
             "ghcr.io/victoriametrics-community/mcp-victoriatraces@sha256:…"
           ],

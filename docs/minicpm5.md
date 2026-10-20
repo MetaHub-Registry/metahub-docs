@@ -34,7 +34,7 @@ resolves the ROCm image for `frame`):
 
 ```bash
 # 1. bring the GGUF into MetaHub as an ORAS artefact
-oras cp harbor.example.com/library/models/minicpm5:q8-0 \
+oras cp registry.example.com/library/models/minicpm5:q8-0 \
         "{{ registry }}/models/minicpm5:q8-0"
 
 # 2. repackage it into a model-layer image + wire it under the `frame` profile,

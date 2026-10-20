@@ -19,3 +19,11 @@ Follow-ups for future sessions:
 - The `client_redirect: true` docs note should mention that clients need
   `docker login <upstream>` for blob delivery (manifests always resolve via
   metahub's server-side credentials).
+
+## Session close — 2026-10-20
+
+- Profile-resolution page added; internal hosts and private IPs replaced with
+  `*.example.com` and IANA documentation ranges.
+- Trust model, `/api/v1` reference, and the profile extension v1 specification
+  added and wired into the nav; `mkdocs build --strict` passes.
+- Merged current `main` (licence/community).
