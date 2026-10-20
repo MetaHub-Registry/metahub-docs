@@ -71,6 +71,7 @@ nav:
   - Pull-Through Cache: pull-through-cache.md
   - Profile Resolution: profile-resolution.md
   - Reference:
+      - Profile Extension v1: profile-spec.md
       - Trust Model: trust-model.md
       - API: api.md
   - Agent Environment: outfitter.md
