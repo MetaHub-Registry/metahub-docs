@@ -9,9 +9,9 @@ automatically. An explicit `user/profile` suffix always wins and remains the
 per-client override.
 
 ```
-docker login -u oci            (from 192.168.5.115)
+docker login -u oci            (from 192.0.2.115)
   └─► GET /auth                     metahub-api (token mint)
-        clientIP = 192.168.5.115 ──► GET /api/v1/resolve?ip=…   metahub-admin-ui
+        clientIP = 192.0.2.115 ──► GET /api/v1/resolve?ip=…   metahub-admin-ui
                                       ◄── {profile: frame, source: ip:0}
         token username: oci/frame    ◄─ carried through the OCI middleware
 ```
@@ -51,10 +51,10 @@ example `misc/config/config.example.yaml` in metahub-admin-ui):
 ```yaml
 inventory:
   entries:
-    - ip: "192.168.5.115"          # exact-IP (optional display hostname)
+    - ip: "192.0.2.115"          # exact-IP (optional display hostname)
       profile: "frame"
       hostname: "frame.hvk"
-    - cidr: "192.168.5.0/24"       # subnet fallback
+    - cidr: "192.0.2.0/24"       # subnet fallback
       profile: "generic"
   hostname:
     lookup_ttl: 60s                # PTR cache, incl. negative results
@@ -75,7 +75,7 @@ behaviour:
 ```yaml
 profile_resolution:
   inventory:
-    url: "http://metahub-admin-ui.metahub-dev.svc.cluster.local"
+    url: "http://metahub-admin-ui.metahub.svc.cluster.local"
     token_env: "INVENTORY_TOKEN"   # optional bearer token, never in YAML
     timeout: 2s
     cache_ttl: 60s                 # positive AND negative outcomes cached
@@ -106,7 +106,7 @@ winning source, and the inventory overview flags entries as **runtime**
 
 ## Operations
 
-- **Dev cluster**: the inventory runs at `adminui.dev.example.com`; sources
+- **Dev cluster**: the inventory runs at `adminui.example.com`; sources
   are seeded via the `metahub-admin-ui-config` ConfigMap (flux).
 - **E2E**: the `admin-ui-e2e_MR1_dev` GoCD pipeline proves the whole loop on
   every admin-ui/api deploy — the agent self-registers its own pod IP as a
