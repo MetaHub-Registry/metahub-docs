@@ -1,0 +1,13 @@
+# Hosts non-test source may contact. Adding one is a review decision.
+127.0.0.1
+localhost
+example.com
+*.example.com
+*.example.invalid
+*.invalid
+metahub-registry.org
+*.metahub-registry.org
+github.com
+*.githubusercontent.com
+w3.org
+*.w3.org

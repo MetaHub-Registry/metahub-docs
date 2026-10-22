@@ -1,0 +1,9 @@
+# Licence families accepted for docs dependencies. pip-licenses matches these
+# as substrings (--partial-match) because it reports compound expressions.
+MIT
+BSD
+Apache
+MPL
+Python
+CNRI-Python
+Academic Free
