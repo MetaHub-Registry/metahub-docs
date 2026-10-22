@@ -24,8 +24,9 @@ nothing is fetched at agent startup.
 
 -   :material-file-cog: **Vendored output**
 
-    `opencode.json` and `.opencode/` are committed to the repo. The agent
-    starts instantly, no network required.
+    `opencode.json` and `.opencode/` live in the project directory. The
+    MetaHub repositories keep them untracked and gitignored; vendoring them is
+    optional and makes the agent start instantly, no network required.
 
 -   :material-shield-check: **Drift detection**
 
