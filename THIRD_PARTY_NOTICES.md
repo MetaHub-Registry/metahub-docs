@@ -36,7 +36,6 @@ run `.github/scripts/third-party-notices.sh > THIRD_PARTY_NOTICES.md`.
 | six                        | 1.17.0     | MIT License                              |
 | super_collections          | 0.6.2      | MIT License                              |
 | termcolor                  | 3.3.0      | MIT                                      |
-| tomli                      | 2.5.0      | MIT                                      |
 | tzdata                     | 2026.5     | Apache-2.0                               |
 | urllib3                    | 2.8.0      | MIT                                      |
 | watchdog                   | 6.0.0      | Apache Software License                  |
