@@ -1,7 +1,7 @@
 # Stage 1: Build (also used as the CI `--target build` test image)
 # Pinned to $BUILDPLATFORM: mkdocs/pip run natively on the build agent (no
 # QEMU); site/ is static and gets COPY'd into the per-arch nginx:alpine below.
-FROM --platform=$BUILDPLATFORM python:3.12-alpine AS build
+FROM --platform=$BUILDPLATFORM mirror.gcr.io/library/python:3.12-alpine AS build
 
 WORKDIR /app
 
@@ -28,7 +28,7 @@ ENV METAHUB_REGISTRY=${METAHUB_REGISTRY}
 RUN mkdocs build --strict
 
 # Stage 2: Serve
-FROM nginx:alpine
+FROM mirror.gcr.io/library/nginx:alpine
 
 COPY --from=build /app/site /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf

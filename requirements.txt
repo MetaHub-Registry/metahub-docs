@@ -1,3 +1,4 @@
 mkdocs-material==9.5.39
 mkdocs-macros-plugin
 mkdocs-macros-plugin
+certifi==2026.10.23

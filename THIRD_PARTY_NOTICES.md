@@ -11,7 +11,7 @@ run `.github/scripts/third-party-notices.sh > THIRD_PARTY_NOTICES.md`.
 | PyYAML                     | 6.0.3      | MIT License                              |
 | Pygments                   | 2.21.0     | BSD-2-Clause                             |
 | babel                      | 2.18.0     | BSD License                              |
-| certifi                    | 2026.10.19 | Mozilla Public License 2.0 (MPL 2.0)     |
+| certifi                    | 2026.10.23 | Mozilla Public License 2.0 (MPL 2.0)     |
 | charset-normalizer         | 3.5.2      | MIT                                      |
 | click                      | 8.5.0      | BSD-3-Clause                             |
 | colorama                   | 0.4.6      | BSD License                              |
