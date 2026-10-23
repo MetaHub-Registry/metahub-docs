@@ -27,3 +27,10 @@ Follow-ups for future sessions:
 - Trust model, `/api/v1` reference, and the profile extension v1 specification
   added and wired into the nav; `mkdocs build --strict` passes.
 - Merged current `main` (licence/community).
+
+## 2026-10-23 — open-source-metahub
+
+- Added the public CI fast lane (`mkdocs --strict`, licence/notices, DCO,
+  gitleaks, telemetry) and the `fast` aggregator.
+- No content changes beyond the API examples touched for the natural-key
+  change.
