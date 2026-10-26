@@ -11,6 +11,7 @@ run `.github/scripts/third-party-notices.sh > THIRD_PARTY_NOTICES.md`.
 | PyYAML                     | 6.0.3      | MIT License                              |
 | Pygments                   | 2.21.0     | BSD-2-Clause                             |
 | babel                      | 2.18.0     | BSD License                              |
+| backrefs                   | 8.1        | MIT                                      |
 | certifi                    | 2026.10.23 | Mozilla Public License 2.0 (MPL 2.0)     |
 | charset-normalizer         | 3.5.2      | MIT                                      |
 | click                      | 8.5.0      | BSD-3-Clause                             |
@@ -22,16 +23,15 @@ run `.github/scripts/third-party-notices.sh > THIRD_PARTY_NOTICES.md`.
 | mkdocs                     | 1.6.1      | BSD-2-Clause                             |
 | mkdocs-get-deps            | 0.2.2      | MIT                                      |
 | mkdocs-macros-plugin       | 1.5.0      | MIT License                              |
-| mkdocs-material            | 9.5.39     | MIT                                      |
+| mkdocs-material            | 9.7.7      | MIT                                      |
 | mkdocs-material-extensions | 1.3.1      | MIT                                      |
 | packaging                  | 26.3       | Apache-2.0 OR BSD-2-Clause               |
 | paginate                   | 0.5.7      | MIT License                              |
 | pathspec                   | 1.1.1      | Mozilla Public License 2.0 (MPL 2.0)     |
 | platformdirs               | 4.13.5     | MIT                                      |
-| pymdown-extensions         | 10.21.3    | MIT                                      |
+| pymdown-extensions         | 12.3       | MIT                                      |
 | python-dateutil            | 3.0.0      | Apache Software License; BSD License     |
 | pyyaml_env_tag             | 1.1        | MIT                                      |
-| regex                      | 2026.9.29  | Apache-2.0 AND CNRI-Python               |
 | requests                   | 2.34.2     | Apache Software License                  |
 | six                        | 1.17.0     | MIT License                              |
 | super_collections          | 0.6.2      | MIT License                              |
