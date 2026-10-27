@@ -28,7 +28,7 @@ run `.github/scripts/third-party-notices.sh > THIRD_PARTY_NOTICES.md`.
 | packaging                  | 26.3       | Apache-2.0 OR BSD-2-Clause               |
 | paginate                   | 0.5.7      | MIT License                              |
 | pathspec                   | 1.1.1      | Mozilla Public License 2.0 (MPL 2.0)     |
-| platformdirs               | 4.13.5     | MIT                                      |
+| platformdirs               | 4.13.6     | MIT                                      |
 | pymdown-extensions         | 12.3       | MIT                                      |
 | python-dateutil            | 3.0.0      | Apache Software License; BSD License     |
 | pyyaml_env_tag             | 1.1        | MIT                                      |
