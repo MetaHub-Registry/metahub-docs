@@ -8,8 +8,8 @@ in GoCD, which contributors cannot see or run.
 
 ## What Changes
 
-Add a public, fork-safe fast lane to `metahub-docs` and keep the slow, container-
-backed checks in a separate release-gating workflow.
+Add a public, fork-safe fast lane to `metahub-docs`. The checks are
+container-free, so there is no separate integration workflow.
 
 - `pip install -r requirements.txt`
 - `misc/mkdocs-build.sh` (`mkdocs build --strict`)
@@ -37,8 +37,6 @@ None.
 
 - New `.github/workflows/`, `.github/scripts/`, allowlists and
   `THIRD_PARTY_NOTICES.md`; `.github/dependabot.yml` for dependency updates.
-- Test-only changes where the container boundary had to be expressed with
-  `testing.Short()`.
 - No runtime behaviour, API, image or GoCD pipeline change.
 - Part of the session lane `oss-public-ci`; the visibility flip is gated on this
   lane being green.

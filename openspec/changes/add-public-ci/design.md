@@ -33,10 +33,11 @@ third-party actions by SHA and references no secret.
 cancelled. Marking only `fast` as a required check at the visibility flip keeps
 the branch-protection configuration stable as checks are added.
 
-### Container-backed checks gate releases
+### No release-only lane
 
-Tests that need Docker run in `integration.yml` on release tags and
-`workflow_dispatch`, with no secrets. They never run on a pull request.
+The MkDocs build and the licence check are container-free and run on every
+pull request. There is no `integration.yml` and no check is deferred to a
+release tag.
 
 ### Dependencies and licences
 
@@ -55,4 +56,4 @@ review gate, not a network sandbox.
 |---|---|
 | A workflow needs a secret when run from a fork | it belongs in the integration lane or is dropped |
 | Action supply chain | every action is pinned to a full commit SHA |
-| Dependency advisories | Dependabot opens weekly PRs; the Go vulnerability job is advisory until the current baseline is cleared |
+| Dependency advisories | Dependabot opens weekly pip PRs; the strict build and `pip-licenses` remain the blocking gates |

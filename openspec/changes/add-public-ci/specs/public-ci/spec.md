@@ -54,13 +54,15 @@ SHA.
 
 Container-backed tests SHALL run in a separate integration workflow rather than
 on the pull-request path. This repository currently has none, so the fast lane
-is the complete suite; a future container-backed test SHALL follow that rule.
+is the complete suite and no integration workflow exists. A future
+container-backed test SHALL get a separate release-time workflow rather than
+being added to the fast lane.
 
-#### Scenario: Release tag is pushed
+#### Scenario: A container-backed test is added
 
-- **WHEN** a release tag is pushed
-- **THEN** the integration workflow runs the full test suite with a container
-  runtime available
+- **WHEN** a test starts a container
+- **THEN** it runs only in a separate integration workflow on release tags and
+  on demand, never on a pull request
 
 ### Requirement: Secret scanning and DCO are enforced
 
