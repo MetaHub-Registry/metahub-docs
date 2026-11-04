@@ -53,7 +53,7 @@ inventory:
   entries:
     - ip: "192.0.2.115"          # exact-IP (optional display hostname)
       profile: "frame"
-      hostname: "frame.hvk"
+      hostname: "frame.example.com"
     - cidr: "192.0.2.0/24"       # subnet fallback
       profile: "generic"
   hostname:
