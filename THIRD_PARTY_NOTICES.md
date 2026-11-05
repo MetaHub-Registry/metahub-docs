@@ -37,4 +37,4 @@ run `.github/scripts/third-party-notices.sh > THIRD_PARTY_NOTICES.md`.
 | termcolor                  | 3.3.0      | MIT                                      |
 | tzdata                     | 2026.6     | Apache-2.0                               |
 | urllib3                    | 2.8.0      | MIT                                      |
-| watchdog                   | 7.0.0      | Apache-2.0                               |
+| watchdog                   | 7.1.0      | Apache-2.0                               |

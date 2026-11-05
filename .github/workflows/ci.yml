@@ -26,8 +26,8 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
-          cache-dependency-path: requirements.txt
-      - run: pip install -r requirements.txt
+          cache-dependency-path: requirements.lock
+      - run: pip install -r requirements.lock
       - name: Build (strict)
         run: ./misc/mkdocs-build.sh
 
@@ -40,8 +40,8 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
-          cache-dependency-path: requirements.txt
-      - run: pip install -r requirements.txt pip-licenses==5.5.5
+          cache-dependency-path: requirements.lock
+      - run: pip install -r requirements.lock pip-licenses==5.5.5
       - name: Check licences
         run: |
           allow="$(grep -vE '^\s*(#|$)' .github/license-allowlist.txt | paste -sd';' -)"
