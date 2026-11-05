@@ -56,7 +56,7 @@ targets: ["opencode"]          # render to OpenCode
 
 sources:
   metahub:                     # an OCI registry of agent components
-    oci: "metahub.hvk/agent-components"
+    oci: "metahub.example.com/agent-components"
 
 components:
   mcp:
@@ -105,7 +105,7 @@ This produces `agent.compose.lock`:
   "components": {
     "skills/go-review": {
       "source": "metahub",
-      "ref": "metahub.hvk/agent-components/skills/go-review@sha256:def456..."
+      "ref": "metahub.example.com/agent-components/skills/go-review@sha256:def456..."
     }
   }
 }
@@ -331,7 +331,7 @@ mirrors MCP servers:
 ```yaml
 sources:
   metahub:
-    oci: "metahub.hvk/agent-components"
+    oci: "metahub.example.com/agent-components"
 
 components:
   skills:
@@ -350,8 +350,8 @@ with no network access.
 caller's ambient registry login:
 
 ```bash
-outfit resolve metahub.hvk/agent-components/skills/go-review:v1.2
-# → metahub.hvk/agent-components/skills/go-review@sha256:abc123...
+outfit resolve metahub.example.com/agent-components/skills/go-review:v1.2
+# → metahub.example.com/agent-components/skills/go-review@sha256:abc123...
 ```
 
 Already-pinned refs pass through unchanged:

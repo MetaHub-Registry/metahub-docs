@@ -3,7 +3,7 @@
 MkDocs Material documentation site for MetaHub — the conference demo
 walkthroughs (small images, layer manipulations, ORAS artefacts).
 
-Served at **docs.metahub.hvk** (prod) and **docs.dev.example.com** (dev).
+Served at **docs.metahub-registry.org** (prod) and **docs.dev.example.com** (dev).
 
 ## Source layout
 

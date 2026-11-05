@@ -97,11 +97,10 @@ Requires a bearer token.
 | GET | `/api/v1/protected/session` | Current session |
 | POST | `/api/v1/protected/registry-token` | Create a registry token |
 | GET | `/api/v1/protected/registry-tokens` | List registry tokens |
-| DELETE | `/api/v1/protected/registry-tokens/<id>` | Revoke a registry token |
+| DELETE | `/api/v1/protected/registry-tokens/<identifier>` | Revoke a registry token |
 | GET | `/api/v1/protected/user` | Current user |
-| GET | `/api/v1/protected/users/<id>` | User by id |
 | PUT | `/api/v1/protected/user/secret` | Store a user secret |
-| DELETE | `/api/v1/protected/user/secret/<id>` | Delete a user secret |
+| DELETE | `/api/v1/protected/user/secret/<name>` | Delete a user secret |
 
 Admin-only, `/api/v1/protected/projects`:
 

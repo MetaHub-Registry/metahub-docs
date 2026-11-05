@@ -11,7 +11,7 @@ run `.github/scripts/third-party-notices.sh > THIRD_PARTY_NOTICES.md`.
 | PyYAML                     | 6.0.3      | MIT License                              |
 | Pygments                   | 2.21.0     | BSD-2-Clause                             |
 | babel                      | 2.18.0     | BSD License                              |
-| backrefs                   | 8.1        | MIT                                      |
+| backrefs                   | 8.2        | MIT                                      |
 | certifi                    | 2026.10.23 | Mozilla Public License 2.0 (MPL 2.0)     |
 | charset-normalizer         | 3.5.2      | MIT                                      |
 | click                      | 8.5.0      | BSD-3-Clause                             |
@@ -28,14 +28,13 @@ run `.github/scripts/third-party-notices.sh > THIRD_PARTY_NOTICES.md`.
 | packaging                  | 26.3       | Apache-2.0 OR BSD-2-Clause               |
 | paginate                   | 0.5.7      | MIT License                              |
 | pathspec                   | 1.1.1      | Mozilla Public License 2.0 (MPL 2.0)     |
-| platformdirs               | 4.13.6     | MIT                                      |
+| platformdirs               | 4.14.5     | MIT                                      |
 | pymdown-extensions         | 12.3       | MIT                                      |
-| python-dateutil            | 3.0.0      | Apache Software License; BSD License     |
+| python-dateutil            | 4.0.0      | BSD-3-Clause                             |
 | pyyaml_env_tag             | 1.1        | MIT                                      |
 | requests                   | 2.34.2     | Apache Software License                  |
-| six                        | 1.17.0     | MIT License                              |
 | super_collections          | 0.6.2      | MIT License                              |
 | termcolor                  | 3.3.0      | MIT                                      |
-| tzdata                     | 2026.5     | Apache-2.0                               |
+| tzdata                     | 2026.6     | Apache-2.0                               |
 | urllib3                    | 2.8.0      | MIT                                      |
-| watchdog                   | 6.0.0      | Apache Software License                  |
+| watchdog                   | 7.1.0      | Apache-2.0                               |

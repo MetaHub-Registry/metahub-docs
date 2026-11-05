@@ -26,8 +26,8 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
-          cache-dependency-path: requirements.txt
-      - run: pip install -r requirements.txt
+          cache-dependency-path: requirements.lock
+      - run: pip install -r requirements.lock
       - name: Build (strict)
         run: ./misc/mkdocs-build.sh
 
@@ -40,8 +40,8 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
-          cache-dependency-path: requirements.txt
-      - run: pip install -r requirements.txt pip-licenses==5.5.5
+          cache-dependency-path: requirements.lock
+      - run: pip install -r requirements.lock pip-licenses==5.5.5
       - name: Check licences
         run: |
           allow="$(grep -vE '^\s*(#|$)' .github/license-allowlist.txt | paste -sd';' -)"
@@ -56,12 +56,14 @@ jobs:
     runs-on: ${{ (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) && 'ubuntu-latest' || vars.CI_RUNNER || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
       - name: Install gitleaks
         run: |
           curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz \
             | tar -xz -C "$RUNNER_TEMP" gitleaks
       - name: Scan
-        run: '"$RUNNER_TEMP/gitleaks" dir . --config .gitleaks.toml --redact --verbose'
+        run: '"$RUNNER_TEMP/gitleaks" git . --config .gitleaks.toml --redact --verbose'
 
   dco:
     name: dco
