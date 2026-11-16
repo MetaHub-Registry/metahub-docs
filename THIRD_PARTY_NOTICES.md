@@ -23,7 +23,7 @@ run `.github/scripts/third-party-notices.sh > THIRD_PARTY_NOTICES.md`.
 | mkdocs                     | 1.6.1      | BSD-2-Clause                             |
 | mkdocs-get-deps            | 0.2.2      | MIT                                      |
 | mkdocs-macros-plugin       | 1.5.0      | MIT License                              |
-| mkdocs-material            | 9.7.7      | MIT                                      |
+| mkdocs-material            | 9.8.1      | MIT                                      |
 | mkdocs-material-extensions | 1.3.1      | MIT                                      |
 | packaging                  | 26.3       | Apache-2.0 OR BSD-2-Clause               |
 | paginate                   | 0.5.7      | MIT License                              |
