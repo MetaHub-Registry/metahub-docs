@@ -1,7 +1,7 @@
 # Fully pinned so the third-party notices and the MkDocs build stay
 # reproducible. Dependabot updates this file.
 Jinja2==3.1.6
-Markdown==3.11.2
+Markdown==3.11.3
 MarkupSafe==3.0.4
 PyYAML==6.0.3
 Pygments==2.21.0
