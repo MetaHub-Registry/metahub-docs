@@ -32,4 +32,4 @@ super_collections==0.6.2
 termcolor==3.3.0
 tzdata==2026.6
 urllib3==2.8.0
-watchdog==7.1.0
+watchdog==7.1.1
